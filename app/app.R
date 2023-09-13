@@ -27,8 +27,10 @@ library(vroom)
 #source("./R/scr##DEF.R", local = TRUE)
 
 
-# UI
+# UI --------------------
+
 ui <- htmltools::htmlTemplate(
+  
   "azmet-shiny-template.html",
   
   sidebarLayout = sidebarLayout(
@@ -41,7 +43,7 @@ ui <- htmltools::htmlTemplate(
       verticalLayout(
         selectInput("dataset", label = "Dataset", choices = ls("package:datasets"))
       )
-    ),
+    ), # sidebarPanel()
     
     mainPanel(
       id = "mainPanel",
@@ -49,13 +51,19 @@ ui <- htmltools::htmlTemplate(
       
       verbatimTextOutput("summary"),
       tableOutput("table")
-    )
-  )
-)
+    ) # mainPanel()
+  ) # sidebarLayout()
+) # htmltools::htmlTemplate()
 
 
-# Server
+# Server --------------------
+
 server <- function(input, output, session) {
+  
+  # Reactive events -----
+  
+  # Outputs -----
+  
   output$summary <- renderPrint({
     dataset <- get(input$dataset, "package:datasets")
     summary(dataset)
@@ -67,5 +75,6 @@ server <- function(input, output, session) {
   })
 }
 
-# Run 
+# Run --------------------
+
 shinyApp(ui = ui, server = server)
