@@ -11,6 +11,8 @@
     <!-- link rel="canonical" href="https://staging.azmet.arizona.edu/past-data" /-->
     <!-- link rel="shortlink" href="https://staging.azmet.arizona.edu/node/6" /-->
     <!-- link rel="revision" href="https://staging.azmet.arizona.edu/past-data" /-->
+    <!-- Google tag (gtag.js) -->
+    <!-- Paste new tag/property code for this AZMet Shiny app here -->
     <script src="https://staging.azmet.arizona.edu/sites/default/files/google_tag/az_comprehensive/google_tag.script.js?s0j7xh" defer></script>
     <title>[Web Application Title] | Arizona Meteorological Network</title> <!-- Edit this line based on individual Shiny app -->
     <link rel="stylesheet" media="all" href="https://staging.azmet.arizona.edu/profiles/custom/az_quickstart/modules/custom/az_flexible_page/css/az_flexible_page.theme.css?s0j7xh" />
@@ -81,8 +83,8 @@
     <link rel="stylesheet" media="all" href="https://cdn.digital.arizona.edu/lib/az-icons/main/az-icons-styles.css" />
     <link rel="stylesheet" media="all" href="https://cdn.digital.arizona.edu/lib/arizona-bootstrap/2.0.13/css/arizona-bootstrap.min.css" />
     <link rel="stylesheet" media="all" href="https://staging.azmet.arizona.edu/profiles/custom/az_quickstart/themes/custom/az_barrio/css/az-barrio-off-canvas-nav.css?s0j7xh" />
-    <!-- Code specific to AZMet Shiny app -->
-    <!-- -->
+    <!-- CSS specific to this AZMet Shiny app -->
+    <!-- link rel="stylesheet" media="all" href="azmet-data-preview-and-download.css" /-->
     <!-- Shiny head code, https://shiny.posit.co/r/articles/build/templates/ -->
     {{ headContent() }}
   </head>
@@ -283,7 +285,7 @@
             <div class="container">
               <!-- div -->
                 <!-- Shiny app -->
-                {{sidebarLayout}}
+                {{ sidebarLayout }}
               <!-- /div -->
             </div>
             <div class="container">

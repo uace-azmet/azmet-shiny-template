@@ -2,6 +2,11 @@
 
 # <App description>
 
+# Add code for the following
+# 
+# 'azmet-shiny-template.html': <!-- Google tag (gtag.js) -->
+# 'azmet-shiny-template.html': <!-- CSS specific to this AZMet Shiny app -->
+
 # Edit the following [in square brackets]:
 # 
 # 'azmet-shiny-template.html': <title>[Web Application Title] | Arizona Meteorological Network</title>
