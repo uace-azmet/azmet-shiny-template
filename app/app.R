@@ -11,7 +11,6 @@
 # 
 # 'azmet-shiny-template.html': <title>[Web Application Title] | Arizona Meteorological Network</title>
 # 'azmet-shiny-template.html': <h1 class="hidden title"><span class="field field--name-title field--type-string field--label-hidden">[Hidden Title]</span></h1>
-# 'azmet-shiny-template.html': <article role="article" about="[/application-areas]" class="node node--type-az-flexible-page node--view-mode-full clearfix">
 # 'azmet-shiny-template.html': <span class="lm-az"></span>
 # 'azmet-shiny-template.html': <h1 class="mt-4 d-inline">[Web Tool Name]</h1>
 # 'azmet-shiny-template.html': <h4 class="mb-0 mt-2">[High-level text summary]</h4>
