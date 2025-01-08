@@ -1,5 +1,3 @@
-
-
 # <App description>
 
 # Add code for the following
@@ -64,7 +62,9 @@ ui <- htmltools::htmlTemplate(
 
 server <- function(input, output, session) {
   
-  # Reactive events -----
+  # Observables -----
+  
+  # Reactives -----
   
   # Outputs -----
   
@@ -78,6 +78,7 @@ server <- function(input, output, session) {
     dataset
   })
 }
+
 
 # Run --------------------
 
