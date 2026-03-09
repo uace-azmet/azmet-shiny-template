@@ -14,51 +14,38 @@
 # 'azmet-shiny-template.html': <h4 class="mb-0 mt-2">[High-level text summary]</h4>
 
 
-# Libraries
-library(azmetr)
-library(dplyr)
-library(htmltools)
-library(lubridate)
-library(shiny)
-library(vroom)
-
-# Functions
-#source("./R/fxnABC.R", local = TRUE)
-
-# Scripts
-#source("./R/scr##DEF.R", local = TRUE)
-
-
 # UI --------------------
+
 
 ui <- htmltools::htmlTemplate(
   
-  "azmet-shiny-template.html",
+  filename = "azmet-shiny-template.html",
   
-  sidebarLayout = sidebarLayout(
+  sidebarLayout = shiny::sidebarLayout(
     position = "left",
     
-    sidebarPanel(
+    shiny::sidebarPanel(
       id = "sidebarPanel",
       width = 4,
       
-      verticalLayout(
-        selectInput("dataset", label = "Dataset", choices = ls("package:datasets"))
+      shiny::verticalLayout(
+        shiny::selectInput("dataset", label = "Dataset", choices = ls("package:datasets"))
       )
     ), # sidebarPanel()
     
-    mainPanel(
+    shiny::mainPanel(
       id = "mainPanel",
       width = 8,
       
-      verbatimTextOutput("summary"),
-      tableOutput("table")
+      shiny::verbatimTextOutput("summary"),
+      shiny::tableOutput("table")
     ) # mainPanel()
   ) # sidebarLayout()
 ) # htmltools::htmlTemplate()
 
 
 # Server --------------------
+
 
 server <- function(input, output, session) {
   
@@ -68,12 +55,12 @@ server <- function(input, output, session) {
   
   # Outputs -----
   
-  output$summary <- renderPrint({
+  output$summary <- shiny::renderPrint({
     dataset <- get(input$dataset, "package:datasets")
     summary(dataset)
   })
   
-  output$table <- renderTable({
+  output$table <- shiny::renderTable({
     dataset <- get(input$dataset, "package:datasets")
     dataset
   })
@@ -82,4 +69,5 @@ server <- function(input, output, session) {
 
 # Run --------------------
 
-shinyApp(ui = ui, server = server)
+
+shiny::shinyApp(ui = ui, server = server)
